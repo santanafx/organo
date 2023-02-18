@@ -3,9 +3,9 @@ import "./ListaSuspensa.css";
 const ListaSuspensa = (props) => {
   console.log(props.itens);
   return (
-    <div>
+    <div className="lista-suspensa">
       <label>{props.label}</label>
-      <select>
+      <select required={props.required}>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}
