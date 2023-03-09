@@ -17,7 +17,6 @@ function App() {
   const [colaboradores, setColaboradores] = React.useState([]);
 
   const aoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   };
 
@@ -27,7 +26,7 @@ function App() {
       <Formulario times={times.map((time) => time.nome)} aoColaboradorCadastrado={(colaborador) => aoColaboradorAdicionado(colaborador)} />
 
       {times.map((time) => (
-        <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />
+        <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} colaboradores={colaboradores.filter((colaborador) => colaborador.time === time.nome)} />
       ))}
     </div>
   );

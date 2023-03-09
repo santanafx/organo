@@ -1,15 +1,15 @@
 import React from "react";
 import "./Colaborador.css";
 
-export const Colaborador = () => {
+export const Colaborador = (props) => {
   return (
     <div className="colaborador">
-      <div className="cabecalho">
-        <img src="https://github.com/santanafx.png" alt="" />
+      <div className="cabecalho" style={{ backgroundColor: props.corDeFundo }}>
+        <img src={props.imagem} alt={props.nome} />
       </div>
       <div className="rodape">
-        <h4>Lucas Santana</h4>
-        <h5>Instrutor</h5>
+        <h4>{props.nome}</h4>
+        <h5>{props.cargo}</h5>
       </div>
     </div>
   );
